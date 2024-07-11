@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/png" href="{{ asset('storage/approve.png') }}">
     {{-- <link rel="icon" type="image/png" href="{{ svg('si-todoist') }}"> --}}
-
-
     @vite('resources/css/app.css')
     <script src="https://unpkg.com/alpinejs" defer></script>
     <title> TASK-IT | {{ $title }} </title>

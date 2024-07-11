@@ -14,8 +14,8 @@ class TodoController extends Controller
     public function index()
     {
         // ---- plan 1 : i used relationship that is on Models
-        $todos = Auth::user()->todos ;
-        // $todos = Auth::user()->todos->paginate(10);
+        // $todos = Auth::user()->todos ;
+        $todos = Auth::user()->todos()->paginate(10);
 
         // ---- plan 2 : i used the simple method , i did the filter inside index.blade.php  @if ($todo->user_id === Auth::user()->id)
         // $todos = Todo::all();

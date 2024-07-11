@@ -26,7 +26,7 @@
                    class=" text-gray-400"
                @endif
            >
-             {{ $todo->created_at }}
+           {{ $todo->created_at->format('Y-m-d || H:i') }}
         </span>
       </div>
 
@@ -34,10 +34,10 @@
             <form action=" {{ route('todo.destroy', $todo->id ) }} " method="POST">
                @csrf
                @method('DELETE')
-                 {{-- <button type="submit">
-                    @svg('fluentui-delete-20', ['style' => 'height: 28px; width: 28px; fill: red;'])
-                 </button> --}}
-                 <input class="bg-red-200 text-red-700 py-1 px-2 rounded hover:bg-red-300 hover:scale-105 transition-all" type="submit" value="delete">
+                 <button class="text-red-500 hover:scale-105 transition-all" type="submit">
+                     @svg('fluentui-delete-20', ['style' => 'height: 28px; width: 28px; fill:red;'])
+                 </button>
+                 {{-- <input class="bg-red-200 text-red-700 py-1 px-2 rounded hover:bg-red-300 hover:scale-105 transition-all" type="submit" value="delete"> --}}
             </form>
       @endif
 
@@ -48,7 +48,7 @@
                      @if ($todo->isCompleted)
                        @svg('ik-ok', ['style' => 'height: 28px; width: 28px; stroke: green;'])
                      @else
-                       @svg('fluentui-checkbox-unchecked-16-o') 
+                       @svg('fluentui-checkbox-unchecked-16-o', ['style' => 'height: 28px; width: 28px; stroke: gray;']) 
                      @endif    
             </button>
          </form>
